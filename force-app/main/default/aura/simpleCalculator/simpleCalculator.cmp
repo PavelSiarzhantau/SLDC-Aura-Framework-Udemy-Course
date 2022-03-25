@@ -1,0 +1,49 @@
+<aura:component
+  implements="force:appHostable,flexipage:availableForAllPageTypes,
+                            flexipage:availableForRecordHome,force:hasRecordId,
+                            forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global"
+>
+  <aura:attribute name="firstValue" type="Integer" />
+  <aura:attribute name="secondValue" type="Integer" />
+  <aura:attribute name="result" type="Integer" />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <div class="wrapper">
+    <lightning:card iconName="utility:automate">
+      <aura:set attribute="title">
+        <h1>Calculator</h1>
+      </aura:set>
+      <aura:set attribute="actions">
+        <lightning:buttonGroup>
+          <lightning:button label="add" onclick="{!c.add}"></lightning:button>
+          <lightning:button
+            label="multiply"
+            onclick="{!c.multiply}"
+          ></lightning:button>
+        </lightning:buttonGroup>
+      </aura:set>
+      <div class="container">
+        <lightning:input
+          type="number"
+          name="input3"
+          label="Number1"
+          value="{!v.firstValue}"
+          placeholder="type here..."
+          class="input"
+        />
+        <lightning:input
+          type="number"
+          name="input3"
+          label="Number2"
+          value="{!v.secondValue}"
+          placeholder="type here..."
+          class="input"
+        />
+        <p>
+          Result:
+          <aura:text value="{!v.result}" />
+        </p>
+      </div>
+    </lightning:card>
+  </div>
+</aura:component>

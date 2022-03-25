@@ -1,0 +1,7 @@
+.THIS.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.THIS .input {
+  max-width: 100px;
+}
