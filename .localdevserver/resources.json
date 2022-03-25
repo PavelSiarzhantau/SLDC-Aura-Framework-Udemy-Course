@@ -1863,5 +1863,13 @@
         "component://localdevserver/home@ru-RU": {
             "dev": "c0efafa63a"
         }
+    },
+    "955c9b9f24": {
+        "component://@webruntime/app@ru-RU": {
+            "dev": "87b80922db"
+        },
+        "component://localdevserver/home@ru-RU": {
+            "dev": "c0efafa63a"
+        }
     }
 }
