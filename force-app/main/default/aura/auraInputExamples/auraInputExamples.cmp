@@ -1,1 +1,119 @@
-<aura:component> </aura:component>
+<aura:component
+  implements="force:appHostable,flexipage:availableForAllPageTypes,
+flexipage:availableForRecordHome,force:hasRecordId,
+forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global"
+>
+  <aura:attribute name="FirstName" type="String" />
+  <aura:attribute name="SecondName" type="String" />
+  <aura:attribute name="Age" type="Integer" />
+  <aura:attribute name="Salary" type="Integer" />
+  <aura:attribute name="Email" type="String" />
+  <aura:attribute name="Phone" type="String" />
+  <aura:attribute name="Married" type="Boolean" />
+  <aura:attribute name="Experience" type="Boolean" />
+  <div class="wrapper">
+    <lightning:card iconName="custom:custom18">
+      <aura:set attribute="title">
+        <h1>Input Examples</h1>
+      </aura:set>
+      <aura:set attribute="actions">
+        <!-- add lightning button group -->
+        <lightning:buttonGroup>
+          <lightning:button
+            label="calculate"
+            onclick="{!c.calculate}"
+          ></lightning:button>
+          <lightning:button
+            label="refresh"
+            onclick="{!c.refresh}"
+          ></lightning:button>
+        </lightning:buttonGroup>
+      </aura:set>
+      <div class="container">
+        <lightning:input
+          name="firstName"
+          label="First Name"
+          placeholder="type here..."
+          value="{!v.FirstName}"
+          onchange="{!c.writeConsole}"
+        />
+        <lightning:input
+          name="secondName"
+          label="Second Name"
+          placeholder="type here..."
+          required="true"
+          value="{!v.sSecondName}"
+        />
+        <lightning:input
+          type="number"
+          name="Age"
+          label="Age"
+          value="{!v.Age}"
+          max="100"
+          placeholder="10"
+        />
+        <lightning:input
+          type="number"
+          name="Salary"
+          required="true"
+          value="{!v.Salary}"
+          label="Salary"
+          formatter="currency"
+          step="0.01"
+          maxlength="5"
+          placeholder="1000$..."
+        />
+        <lightning:input
+          type="email"
+          name="Email"
+          placeholder="youraddress@company.com"
+          value="{!v.Email}"
+          label="Email"
+        />
+        <lightning:input
+          type="tel"
+          label="Phone"
+          name="Phone"
+          value="{!v.Phone}"
+          autocomplete="true"
+        />
+        <lightning:input
+          type="checkbox"
+          label="Married?"
+          name="Married"
+          checked="{!v.Married}"
+          required="true"
+        />
+        <lightning:input
+          type="toggle"
+          label="Required option"
+          name="Experience"
+          checked="{!v.Experience}"
+          required="true"
+        />
+        <lightning:input />
+        <lightning:select
+          aura:id="field"
+          label="Select the best ice cream flavor"
+          name="flavor"
+          required="true"
+        >
+          <option value="">Choose a flavor...</option>
+          <option value="vanilla">Vanilla</option>
+          <option value="chocolate">Chocolate</option>
+          <option value="strawberry">Strawberry</option>
+        </lightning:select>
+        <div onkeyup="{!c.handleKeyUp}">
+          <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Search when user hits the 'enter' key"
+            type="search"
+          />
+        </div>
+        <lightning:input type="color" name="color" label="Favorite Color" />
+      </div>
+    </lightning:card>
+  </div>
+</aura:component>

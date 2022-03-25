@@ -1,2 +1,7 @@
-.THIS {
+.THIS.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.THIS .container {
+  padding: 50px;
 }
